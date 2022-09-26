@@ -5,7 +5,7 @@ import http from 'http';
 
 const STAGES = ['Start', 'Category', 'Playing', 'End'];
 const questions = async () => {
-  const result = await (await axios.get('http://localhost:3000/questions')).data;
+  const result = await (await axios.get('http://52.90.7.101:3000/questions')).data;
   const facil = result.filter((i) => {
     if (i.categoria === 'facil') return i;
   });

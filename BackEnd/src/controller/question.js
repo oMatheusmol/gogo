@@ -27,7 +27,18 @@ const create = async (req, res) => {
   res.status(201).send('Question inserted');
 };
 
+const remove = async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  console.log(req.body.id);
+  const { id } = req.body;
+
+  connection.query(`DELETE FROM Question WHERE id=${id}`);
+
+  res.status(201).send('Question deleted');
+};
+
 module.exports = {
   read,
   create,
+  remove,
 };
